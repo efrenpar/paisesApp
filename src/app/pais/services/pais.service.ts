@@ -27,4 +27,9 @@ export class PaisService {
     return this.http.get<Country[]>(url);
   }
 
+  buscarPaisXRegion(termino:string):Observable<Country[]>{
+    const url = `${this.apiUrl}/region/${termino.toLocaleLowerCase()}`
+    return this.http.get<Country[]>(url);
+  }
+
 }
